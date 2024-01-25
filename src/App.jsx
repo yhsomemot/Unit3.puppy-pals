@@ -4,19 +4,22 @@ import { useState } from 'react'
 
 
 function App() {
-  const [puppies, setPuppies] = useState(puppyList)
-  console.log(puppies)
 
+  const [puppies, setPuppies] = useState(puppyList);
+  const [featPupId, setFeatPupId] = useState(null);
+
+  // console.log("puppyList: ", puppyList);
 
   return (
-    <div>
+    <div className="App">
       {
         puppies.map((puppy) => {
-          return <p>{puppy.name}</p>
+          return (<p onClick={() => { setFeatPupId(puppy.id) }} key={puppy.id}>{puppy.name}</p>);
         })
       }
+      <p>{featPupId}</p>
     </div>
-  )
+  );
 }
 
 export default App
