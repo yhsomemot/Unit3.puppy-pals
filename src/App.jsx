@@ -21,10 +21,10 @@ function App() {
     <div className="App">
       {
         puppies.map((puppy) => {
-          return (<button onClick={() => { setFeatPupId(puppy.id) }} key={puppy.id}>{puppy.name}</button>);
+          return (<button className="logo" onClick={() => { setFeatPupId(puppy.id) }} key={puppy.id}>{puppy.name}</button>);
         })
       }
-      <p>{featPupId && (
+      <a>{featPupId && (
         <div>
           <h2>{featuredPup.name}</h2>
           <ul>
@@ -32,7 +32,7 @@ function App() {
             <li>Email: {featuredPup.email}</li>
           </ul>
         </div>
-      )}</p>
+      )}</a>
     </div>
   );
 }
